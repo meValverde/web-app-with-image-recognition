@@ -19,7 +19,7 @@ namespace Company.Function
         {
             var someObject = new{text= "This is the returned message"};
              
-            return new OkObjectResult("This is the returned message");
+            return new OkObjectResult(someObject);
         }
     }
 }
