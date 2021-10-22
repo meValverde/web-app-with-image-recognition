@@ -32,11 +32,16 @@ namespace Company.Function
             string subscriptionKey = config["ComputerVisionKey"];
             string endpoint = "https://web-app-with-image-recog.cognitiveservices.azure.com/";
 
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            dynamic data = JsonConvert.DeserializeObject(requestBody);
+            
+            string imageUrl= data?.imageUrl;
+            
             // Create a client
             ComputerVisionClient client = Authenticate(endpoint, subscriptionKey);
 
             // Analyze an image to get features and other properties.
-            var analysisResult= await AnalyzeImageUrl(client, "https://cdn.pixabay.com/photo/2012/03/01/00/55/garden-19830_960_720.jpg");
+            var analysisResult= await AnalyzeImageUrl(client,imageUrl);
 
             
              
