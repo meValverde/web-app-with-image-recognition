@@ -38,6 +38,10 @@ function analyzeImage() {
             var fullTextResponse = '<h4>Anylyze result</h4>';
 
             fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> ';
+
+            if (data.imageType=0){
+                fullTextResponse+='<b>The image is a photography</b><br />';
+            }
             
             if (data.adult.isAdultContent == false) {
                 fullTextResponse += '<b>The image does not contain adult content</b><br />';
