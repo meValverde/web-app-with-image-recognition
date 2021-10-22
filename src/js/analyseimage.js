@@ -39,8 +39,11 @@ function analyzeImage() {
 
             fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> ';
 
-            if (data.imageType=0){
+            if (data.imageType==0){
                 fullTextResponse+='<b>The image is a photography</b><br />';
+            }
+            else{
+                fullTextResponse += 'The image is a drawing<br />'; 
             }
             
             if (data.adult.isAdultContent == false) {
