@@ -39,7 +39,7 @@ function analyzeImage() {
 
             fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> ';
 
-            if (data.imageType==0){
+            if (data.imageType.clipArtType==0){
                 fullTextResponse+='<b>The image is a photography</b><br />';
             }
             else{
