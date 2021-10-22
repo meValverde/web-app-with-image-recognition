@@ -1,4 +1,4 @@
-const uri = 'https://victorious-rock-00503b903.azurestaticapps.net/api/analyzeimage';
+const uri = 'https://gray-smoke-06eb5fe03.azurestaticapps.net/api/analyzeimage';
 
 function analyzeImage() {   
     var imageUrl = document.getElementById('imageUrlInput').value;
