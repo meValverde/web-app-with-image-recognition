@@ -44,8 +44,8 @@ function analyzeImage() {
             '<br/>Background:'+data.color.dominantColorBackground+ '.<p/> <br/>';
 
 
-            if (data.color.isBwImg == true){
-                fullTextResponse+='<b>The image is in black and white</b><br />'
+            if (data.color.isBWImg == true){
+                fullTextResponse+='<b>The image is in black and white</b><br />';
             }
             else{
                 fullTextResponse+='<b>The image has color</b><br />'
