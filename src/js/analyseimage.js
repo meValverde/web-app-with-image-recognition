@@ -37,13 +37,16 @@ function analyzeImage() {
 
             var fullTextResponse = '<h4>Anylyze result</h4>';
 
-            fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> ';
+            fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> <br/>';
 
-            if (data.imageType.clipArtType==0){
-                fullTextResponse+='<b>The image is a photography</b><br />';
+            fullTextResponse += '<p><b>Dominant Colors:</b><br/>Foreground:'+data.color.dominantColorForeground+
+            '<br/>Background:'+data.color.dominantColorBackground+ '.<p/> <br/>';
+
+            if (data.color.isBwImg ==false){
+                fullTextResponse+='<b>The image is not black and white</b><br />'
             }
             else{
-                fullTextResponse += 'The image is a drawing<br />'; 
+                fullTextResponse+='<b>The image is in black and white</b><br />'
             }
             
             if (data.adult.isAdultContent == false) {
@@ -67,7 +70,7 @@ function analyzeImage() {
             });
 
 
-            document.getElementById('imageDescription').innerHTML = fullTextResponse;
+            document.getElementById('imageTags').innerHTML = fullTextResponse;
 
             console.log(data)
         })
