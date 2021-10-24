@@ -35,13 +35,14 @@ function analyzeImage() {
 
             imageDiv.appendChild(imgTag);
             
-            var fullTextResponse = '<h4>Anylyze result</h4>';
+            var fullTextResponse = '</br></br><h4>Analyze result</h4>';
             var secondResponse = '<h4>Tags</h4>';
 
             fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> <br/>';
 
             fullTextResponse += '<p><b>Dominant Colors:</b><br/>Foreground:'+data.color.dominantColorForeground+
             '<br/>Background:'+data.color.dominantColorBackground+ '.<p/> <br/>';
+
 
             if (data.color.isBwImg == true){
                 fullTextResponse+='<b>The image is in black and white</b><br />'

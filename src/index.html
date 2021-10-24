@@ -18,6 +18,15 @@
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">Try image recognition here</h1>
           <p class="lead text-muted">Tool to recognize elements and colours on an URL image.</p>
+          <form action="javascript:void(0);" method="POST" onsubmit="analyzeImage()">
+            <div class="form-group">
+              <label for="imageUrlInput">Image URL</label>
+              <input type="text" class="form-control" id="imageUrlInput" aria-describedby="emailHelp"
+                placeholder="Insert URL here">
+              <small id="emailHelp" class="form-text text-muted">The image must be in .jpg or .png format</br></small>
+            </div>
+            <input type="submit" value="Analyze" class="btn btn-outline-primary btn-lg btn-block">
+          </form>
         </div>
       </div>
     </section>
@@ -25,15 +34,6 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="p-4">
-          <form action="javascript:void(0);" method="POST" onsubmit="analyzeImage()">
-            <div class="form-group">
-              <label for="imageUrlInput">Image URL</label>
-              <input type="text" class="form-control" id="imageUrlInput" aria-describedby="emailHelp"
-                placeholder="Insert URL here">
-              <small id="emailHelp" class="form-text text-muted">The image must be in .jpg or .png format</small>
-            </div>
-            <input type="submit" value="Analyze" class="btn btn-primary">
-          </form>
           <div hidden id="spinner"></div>
           <div id="imageDescription"></div>
         </div>
