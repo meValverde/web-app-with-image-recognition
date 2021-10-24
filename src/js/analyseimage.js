@@ -34,19 +34,20 @@ function analyzeImage() {
             imgTag.classList = 'img-fluid';
 
             imageDiv.appendChild(imgTag);
-
+            
             var fullTextResponse = '<h4>Anylyze result</h4>';
+            var secondResponse = '<h4>Tags</h4>';
 
             fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> <br/>';
 
             fullTextResponse += '<p><b>Dominant Colors:</b><br/>Foreground:'+data.color.dominantColorForeground+
             '<br/>Background:'+data.color.dominantColorBackground+ '.<p/> <br/>';
 
-            if (data.color.isBwImg ==false){
-                fullTextResponse+='<b>The image is not black and white</b><br />'
+            if (data.color.isBwImg == true){
+                fullTextResponse+='<b>The image is in black and white</b><br />'
             }
             else{
-                fullTextResponse+='<b>The image is in black and white</b><br />'
+                fullTextResponse+='<b>The image has color</b><br />'
             }
             
             if (data.adult.isAdultContent == false) {
@@ -63,14 +64,13 @@ function analyzeImage() {
                 fullTextResponse += 'The image does contain racy content<br />';
             }
 
-            fullTextResponse += '<h4>Tags</h4>';
 
             data.tags.forEach(function (arrayTag) {
-                fullTextResponse += 'I am ' + Math.round((arrayTag.confidence * 100 + Number.EPSILON) * 100) / 100 + ' % sure of ' + arrayTag.name + '<br />';
+                secondResponse += 'I am ' + Math.round((arrayTag.confidence * 100 + Number.EPSILON) * 100) / 100 + ' % sure of ' + arrayTag.name + '<br />';
             });
 
 
-            document.getElementById('imageTags').innerHTML = fullTextResponse;
+            document.getElementById('imageTags').innerHTML = secondResponse;
 
             console.log(data)
         })

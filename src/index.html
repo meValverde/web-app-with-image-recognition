@@ -13,17 +13,24 @@
 
 <body>
   <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Try image recognition here</h1>
+          <p class="lead text-muted">Tool to recognize elements and colours on an URL image.</p>
+        </div>
+      </div>
+    </section>
+
     <div class="row">
       <div class="col-lg-6">
-        <h2 class="p-4">Try image recognition here</h2>
         <div class="p-4">
           <form action="javascript:void(0);" method="POST" onsubmit="analyzeImage()">
             <div class="form-group">
               <label for="imageUrlInput">Image URL</label>
               <input type="text" class="form-control" id="imageUrlInput" aria-describedby="emailHelp"
-                placeholder="Tilføj url til et billede her">
-              <small id="emailHelp" class="form-text text-muted">Sti til billede skal ende på .jpg eller
-                .png</small>
+                placeholder="Insert URL here">
+              <small id="emailHelp" class="form-text text-muted">The image must be in .jpg or .png format</small>
             </div>
             <input type="submit" value="Analyze" class="btn btn-primary">
           </form>
