@@ -35,7 +35,7 @@ function analyzeImage() {
 
             imageDiv.appendChild(imgTag);
             
-            var fullTextResponse = '</br></br><h4>Analyze result</h4>';
+            var fullTextResponse = '<h4>Analyze result</h4>';
             var secondResponse = '<h4>Tags</h4>';
 
             fullTextResponse += '<p><b>Description</b>: ' + data.description.captions[0].text + '.<p/> <br/>';
