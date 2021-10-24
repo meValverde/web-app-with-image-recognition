@@ -70,6 +70,7 @@ function analyzeImage() {
             });
 
 
+            document.getElementById('imageDescription').innerHTML = fullTextResponse;
             document.getElementById('imageTags').innerHTML = secondResponse;
 
             console.log(data)
